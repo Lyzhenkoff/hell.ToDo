@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo</title>
+    <style>
+        body {
+            background-color: #F5F5F5;
+        }
+
+        .task {
+            background-color: white;
+            padding: 5%;
+            width: 100px;
+            height: 20px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2%;
+        }
+    </style>
+</head>
+<body>
+<h1>TO DO</h1>
+<input id="input">
+<button id="btn">click</button>
+<div id="txt-area"></div>
+<script>
+    let input = document.getElementById('input');
+    let btn = document.getElementById('btn');
+    let txtArea = document.getElementById('txt-area');
+
+    /**
+     * function create task
+     */
+    btn.onclick = function () {
+        let taskArea = document.createElement('div');
+        taskArea.innerText = input.value;
+        let task = txtArea.appendChild(taskArea);
+        task.className = 'task';
+    };
+    /**
+     * delete all tasks
+     */
+    txtArea.ondblclick = function () {
+        txtArea.remove();
+    }
+
+</script>
+</body>
+</html>
