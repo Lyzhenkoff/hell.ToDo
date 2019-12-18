@@ -22,11 +22,14 @@
 <input id="input">
 <button id="btn">click</button>
 <div id="txt-area"></div>
+<div id="txt-area-2"></div>
 <script>
     let input = document.getElementById('input');
     let btn = document.getElementById('btn');
     let txtArea = document.getElementById('txt-area');
     let button2 = document.getElementById('btn2');
+    let txtArea2 = document.getElementById('txt-area-2');
+
     /**
      * function create task
      */
@@ -35,13 +38,9 @@
         taskArea.innerText = input.value;
         let task = txtArea.appendChild(taskArea);
         task.className = 'task';
-        let btnTask = document.createElement('button');
-        btnTask.textContent = 'click';
-        let buttonTask = txtArea.appendChild(btnTask);
-        buttonTask.id = 'btn2'
 
     };
-    button2.onclick = function(){
+    getElementByName('task').onclick = function(){
         let taskArea2 = document.createElement('input');
         txtArea2.appendChild(taskArea2);
     }
@@ -51,7 +50,7 @@
      */
     txtArea.ondblclick = function () {
             txtArea.remove();
-            
+
     }
 
 </script>
